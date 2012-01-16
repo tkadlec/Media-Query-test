@@ -80,7 +80,7 @@ $id = uniqid(rand(),true);
 </head>
 <body>
 <h1>Media Query Image Download Test</h1>
-
+<p><a href="http://www.browserscope.org/user/tests/table/agt1YS1wcm9maWxlcnINCxIEVGVzdBiolegMDA?v=3&layout=simple&f=Image%20Tag,BG%20Image%20Display%20None%20(max-width),BG%20Image%20Parent%20Object%20Set%20to%20Display%20None,BG%20Image%20with%20Cascade%20Override%20(Mobile),BG%20Image%20with%20Cascade%20Override%20(Desktop),BG%20Image%20Where%20Desktop%20Image%20Set%20with%20Min-Width%20(Mobile),BG%20Image%20Where%20Desktop%20Image%20Set%20with%20Min-Width%20(Desktop),BG%20Image%20Display%20None%20(max-device-width)&highlight=1">View results</a></p>
 <p>Lovingly pulled from Cloud Four. <a href="http://www.cloudfour.com/css-media-query-for-mobile-is-fools-gold/">Cloud Four article on media queries</a></p>
 
 <h2 id="t1">Test One: Image Tag</h2>
@@ -219,6 +219,11 @@ $id = uniqid(rand(),true);
 	<h2>Results</h2>
 </div>
 <script type="text/javascript" charset="utf-8">
+//use for browserscope
+var _bTestResults = {};
+//add the widths
+_bTestResults['Screen Width'] = screen.width;
+_bTestResults['Outer Width'] = window.outerWidth
 
 //we'll use this to check background images
 //accepts an array of imageNames
@@ -237,31 +242,53 @@ function checkImages(images) {
 		
 		//now, create a new image and set it's src
 		var image = new Image();
-		image.src = prefix + images[i] + "?" + suffix;
+		image.src = prefix + images[i][0] + "?" + suffix;
 		
 		//check to see if image is loaded using image.height
 		//was using image.complete, but Opera was misreporting
 		if (image.height) {
-			target.innerHTML += "<p class='load'>" + prefix + images[i] + "?" + suffix + " has loaded.</p>";
+			target.innerHTML += "<p class='load'>" + prefix + images[i][0] + "?" + suffix + " has loaded.</p>";
+			//save the result for Browserscope
+			_bTestResults[images[i][1]] = 1;
+			
 		} else {
-			target.innerHTML += "<p class='noload'>" + prefix + images[i] + "?" + suffix + " has not loaded.</p>";
+			target.innerHTML += "<p class='noload'>" + prefix + images[i][0] + "?" + suffix + " has not loaded.</p>";
+			//save the result for Browserscope
+			_bTestResults[images[i][1]] = 0;
+			
 		}
 		
+		
 	}
+
 	
 }
 window.onload = function() {
 	var toCheck = [
-		'test1.png',
-		'test2.png',
-		'test3.png',
-		'test4-mobile.png',
-		'test4-desktop.png',
-		'test5-mobile.png',
-		'test5-desktop.png',
-		'test6.png'
+		['test1.png', 'Image Tag'],
+		['test2.png', 'BG Image Display None (max-width)'],
+		['test3.png', 'BG Image Parent Object Set to Display None'],
+		['test4-mobile.png', 'BG Image with Cascade Override (Mobile)'],
+		['test4-desktop.png', 'BG Image with Cascade Override (Desktop)'],
+		['test5-mobile.png', 'BG Image Where Desktop Image Set with Min-Width (Mobile)'],
+		['test5-desktop.png', 'BG Image Where Desktop Image Set with Min-Width (Desktop)'],
+		['test6.png', 'BG Image Display None (max-device-width)'],
 	];
 	checkImages(toCheck);
+
+
+	
+	// Fetch the Browserscope script that sucks the results from _bTestResults
+	(function() {
+		var _bTestKey = 'agt1YS1wcm9maWxlcnINCxIEVGVzdBiolegMDA';
+		var _bScript = document.createElement('script');
+		_bScript.src = 'http://www.browserscope.org/user/beacon/' + _bTestKey;
+		_bScript.src += '?sandboxid=a7bdc19a806b456';
+		_bScript.setAttribute('async', 'true');
+		var scripts = document.getElementsByTagName('script');
+		var lastScript = scripts[scripts.length - 1];
+		lastScript.parentNode.insertBefore(_bScript, lastScript);
+	})();
 }
 </script>
 </body>
