@@ -244,9 +244,7 @@ function checkImages(images) {
 		var image = new Image();
 		image.src = prefix + images[i][0] + "?" + suffix;
 		
-		//check to see if image is loaded using image.height
-		//was using image.complete, but Opera was misreporting
-		if (image.height) {
+		if (image.complete) {
 			target.innerHTML += "<p class='load'>" + prefix + images[i][0] + "?" + suffix + " has loaded.</p>";
 			//save the result for Browserscope
 			_bTestResults[images[i][1]] = 1;
