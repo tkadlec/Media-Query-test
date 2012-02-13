@@ -9,21 +9,33 @@ $id = uniqid(rand(),true);
     <title>Media Query Test: Background Image Display None</title>
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
 
+
 	<!-- Basic formatting stuff -->
-	<style type="text/css">
+    <style type="text/css">
+	body {
+		font: 100%/1.4em Georgia, serif;
+	}
 	code {white-space:pre;background:#e1e1e1;border:1px solid #ccc;padding:10px;width:100%;display:block;margin-top:5px;}
 	h4 {margin-bottom:0;}
 	#loaded{
 		border: 1px solid #000;
 		padding: 20px;
 	}
+	
 	.load{
 		color: green;
 	}
 	.noload{
 		color: red;
 	}
+	.testLinks{
+		font-size: 1.2em;
+	}
+	.testLinks li{
+		margin-bottom: .5em;
+	}
 	</style>
+
 	
 	<!-- Test 2 Styles -->
 	<style type="text/css">
@@ -67,6 +79,8 @@ $id = uniqid(rand(),true);
 <div id="loaded">
 	<h2>Results</h2>
 </div>
+<?php include('includes/testLinks.inc.php'); ?>
+
 <script type="text/javascript" charset="utf-8">//use for browserscope
 var _bTestResults = {};
 //add the widths

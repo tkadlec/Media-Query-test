@@ -11,17 +11,27 @@ $id = uniqid(rand(),true);
 
 	<!-- Basic formatting stuff -->
     <style type="text/css">
+	body {
+		font: 100%/1.4em Georgia, serif;
+	}
 	code {white-space:pre;background:#e1e1e1;border:1px solid #ccc;padding:10px;width:100%;display:block;margin-top:5px;}
 	h4 {margin-bottom:0;}
 	#loaded{
 		border: 1px solid #000;
 		padding: 20px;
 	}
+	
 	.load{
 		color: green;
 	}
 	.noload{
 		color: red;
+	}
+	.testLinks{
+		font-size: 1.2em;
+	}
+	.testLinks li{
+		margin-bottom: .5em;
 	}
 	</style>
 </head>
@@ -36,26 +46,6 @@ $id = uniqid(rand(),true);
 <h2>About these tests</h2>
 <p>These tests are an attempt to determine how images are downloaded by browsers when used in combination with media queries. If you have a suggestion for another test to include in the suite, or find a bug, please send an email to <a href="mailto:tim@timkadlec.com">tim@timkadlec.com</a> or submit a pull request on <a href="https://github.com/tkadlec/Media-Query-test">Github</a>.</p>
 
-<h2>The tests</h2>
-<ul>
-    <li>
-        <a href="test1.php">Test One: Image Tag</a>
-    </li>
-    <li>
-        <a href="test2.php">Test Two: Background Image Display None</a>
-    </li>
-    <li>
-        <a href="test3.php">Test Three: Background Image, Parent Object Set to Display None</a>
-    </li>
-    <li>
-        <a href="test4.php">Test Four: Background Image with Cascade Override</a>
-    </li>
-    <li>
-        <a href="test5.php">Test Five: Background Image Where Desktop Image Set with Min-Width</a>
-    </li>
-    <li>
-        <a href="test6.php">Test Six: Background Image Display None (max-device-width)</a>
-    </li>
-</ul>
+<?php include('includes/testLinks.inc.php'); ?>
 </body>
 </html>

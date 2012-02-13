@@ -11,6 +11,9 @@ $id = uniqid(rand(),true);
 
 	<!-- Basic formatting stuff -->
 	<style type="text/css">
+	body {
+		font: 100%/1.4em Georgia, serif;
+	}
 	code {white-space:pre;background:#e1e1e1;border:1px solid #ccc;padding:10px;width:100%;display:block;margin-top:5px;}
 	h4 {margin-bottom:0;}
 	#loaded{
@@ -23,6 +26,13 @@ $id = uniqid(rand(),true);
 	.noload{
 		color: red;
 	}
+	.testLinks{
+		font-size: 1.2em;
+	}
+	.testLinks li{
+		margin-bottom: .5em;
+	}
+	
 	</style>
 	
 	<!-- Test 1 Styles -->
@@ -74,6 +84,10 @@ $id = uniqid(rand(),true);
 <div id="loaded">
 	<h2>Results</h2>
 </div>
+
+<?php include('includes/testLinks.inc.php'); ?>
+
+
 <script type="text/javascript" charset="utf-8">
 
 //use for browserscope
