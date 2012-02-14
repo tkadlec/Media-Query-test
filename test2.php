@@ -40,7 +40,7 @@ $id = uniqid(rand(),true);
 	<!-- Test 2 Styles -->
 	<style type="text/css">
 	#test2 {background-image:url('test2.png?<?php echo $id; ?>');width:200px;height:75px;}
-	@media all and (max-width: 500px) {
+	@media all and (max-width: 600px) {
 	    #test2 {display:none;}
 	}
 	</style>
@@ -58,7 +58,7 @@ $id = uniqid(rand(),true);
 
 <h2 id="t2">Test Two: Background Image Display None</h2>
 <p>
-    Div is assigned a background image. This div is hidden when the page is smaller than 500 pixels.
+    Div is assigned a background image. This div is hidden when the page is smaller than 600 pixels.
 </p>
 
 <div id="test2"></div>
@@ -69,7 +69,7 @@ $id = uniqid(rand(),true);
 <h4>CSS Code</h4>
 <code>&#60;style type="text/css"&#62;
 #test2 {background-image:url('test2.png?<?php echo $id; ?>');width:200px;height:75px;}
-@media all and (max-width: 500px) {
+@media all and (max-width: 600px) {
     #test2 {display:none;}
 }
 &#60;/style&#62;

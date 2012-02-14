@@ -39,7 +39,7 @@ $id = uniqid(rand(),true);
 	<!-- Test 6 Styles -->
 	<style type="text/css">
 	#test6 {background-image:url('test6.png?<?php echo $id; ?>');width:200px;height:75px;}
-	@media all and (max-device-width: 500px) {
+	@media all and (max-device-width: 600px) {
 	    #test6 {display:none;}
 	}
 	</style>
@@ -66,7 +66,7 @@ $id = uniqid(rand(),true);
 <h4>CSS Code</h4>
 <code>&#60;style type="text/css"&#62;
 #test6 {background-image:url('test6.png?<?php echo $id; ?>');width:200px;height:75px;}
-@media all and (max-device-width: 500px) {
+@media all and (max-device-width: 600px) {
     #test6 {display:none;}
 }
 &#60;/style&#62;

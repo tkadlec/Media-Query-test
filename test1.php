@@ -37,7 +37,7 @@ $id = uniqid(rand(),true);
 	
 	<!-- Test 1 Styles -->
 	<style type="text/css">
-	@media all and (max-width: 500px) {
+	@media all and (max-width: 600px) {
 	    #test1 {
 	        display:none;
 	    }
@@ -57,7 +57,7 @@ $id = uniqid(rand(),true);
 
 <h2 id="t1">Test One: Image Tag</h2>
 <p>
-    Simple image tag that will show up when page is greater than 500 pixels wide, but are hidden on smaller screens.
+    Simple image tag that will show up when page is greater than 600 pixels wide, but are hidden on smaller screens.
 </p>
 
 <div id="test1">
@@ -73,7 +73,7 @@ $id = uniqid(rand(),true);
 <h4>CSS Code</h4>
 <code>&#60;style type="text/css"&#62;
 
-@media all and (max-width: 500px) {
+@media all and (max-width: 600px) {
     #test1 {
         display:none;
     }

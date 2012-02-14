@@ -39,7 +39,7 @@ $id = uniqid(rand(),true);
 	<!-- Test 4 Styles -->
 	<style type="text/css">
 	#test4 {background-image:url('test4-desktop.png?<?php echo $id; ?>');width:200px;height:75px;}
-	@media all and (max-width: 500px) {
+	@media all and (max-width: 600px) {
 	    #test4 {background-image:url('test4-mobile.png?<?php echo $id; ?>');}
 	}
 	</style>
@@ -68,7 +68,7 @@ $id = uniqid(rand(),true);
 <h4>CSS Code</h4>
 <code>&#60;style type="text/css"&#62;
 #test4 {background-image:url('test4-desktop.png?<?php echo $id; ?>');width:200px;height:75px;}
-@media all and (max-width: 500px) {
+@media all and (max-width: 600px) {
     #test4 {background-image:url('test4-mobile.png?<?php echo $id; ?>');}
 }
 &#60;/style&#62;
@@ -124,7 +124,7 @@ window.onload = function() {
         _bTestResults['Loaded (small screen)'] = 1;
         
     } else {
-        targetM.innerHTML += "<p class='noload'>http://timkadlec.com/mq/test4-mobile.png?" + suffix + " has not loaded.</p>";
+        target.innerHTML += "<p class='noload'>http://timkadlec.com/mq/test4-mobile.png?" + suffix + " has not loaded.</p>";
         //save the result for Browserscope
         _bTestResults['Loaded (small screen)'] = 0;
         
