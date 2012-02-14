@@ -38,9 +38,9 @@ $id = uniqid(rand(),true);
 	
 	<!-- Test 4 Styles -->
 	<style type="text/css">
-	#test4 {background-image:url('test4-desktop.png?<?php echo $id; ?>');width:200px;height:75px;}
+	#test4 {background-image:url('images/test4-desktop.png?<?php echo $id; ?>');width:200px;height:75px;}
 	@media all and (max-width: 600px) {
-	    #test4 {background-image:url('test4-mobile.png?<?php echo $id; ?>');}
+	    #test4 {background-image:url('images/test4-mobile.png?<?php echo $id; ?>');}
 	}
 	</style>
 
@@ -67,9 +67,9 @@ $id = uniqid(rand(),true);
 
 <h4>CSS Code</h4>
 <code>&#60;style type="text/css"&#62;
-#test4 {background-image:url('test4-desktop.png?<?php echo $id; ?>');width:200px;height:75px;}
+#test4 {background-image:url('images/test4-desktop.png?<?php echo $id; ?>');width:200px;height:75px;}
 @media all and (max-width: 600px) {
-    #test4 {background-image:url('test4-mobile.png?<?php echo $id; ?>');}
+    #test4 {background-image:url('images/test4-mobile.png?<?php echo $id; ?>');}
 }
 &#60;/style&#62;
 </code>
@@ -101,30 +101,30 @@ window.onload = function() {
 	
     //now, create a new image and set it's src
     var image = new Image();
-    image.src = 'http://timkadlec.com/mq/test4-desktop.png?' + suffix;
+    image.src = 'http://timkadlec.com/mq/images/test4-desktop.png?' + suffix;
     
     if (image.complete) {
-        target.innerHTML += "<p class='load'>http://timkadlec.com/mq/test4-desktop.png?" + suffix + " has loaded.</p>";
+        target.innerHTML += "<p class='load'>http://timkadlec.com/mq/images/test4-desktop.png?" + suffix + " has loaded.</p>";
         //save the result for Browserscope
         _bTestResults['Loaded (large screen)'] = 1;
         
     } else {
-        target.innerHTML += "<p class='noload'>http://timkadlec.com/mq/test4-desktop.png?" + suffix + " has not loaded.</p>";
+        target.innerHTML += "<p class='noload'>http://timkadlec.com/mq/images/test4-desktop.png?" + suffix + " has not loaded.</p>";
         //save the result for Browserscope
         _bTestResults['Loaded (large screen)'] = 0;
         
     }
 
     var imageM = new Image();
-    imageM.src = 'http://timkadlec.com/mq/test4-mobile.png?' + suffix;
+    imageM.src = 'http://timkadlec.com/mq/images/test4-mobile.png?' + suffix;
     
     if (imageM.complete) {
-        target.innerHTML += "<p class='load'>http://timkadlec.com/mq/test4-mobile.png?" + suffix + " has loaded.</p>";
+        target.innerHTML += "<p class='load'>http://timkadlec.com/mq/images/test4-mobile.png?" + suffix + " has loaded.</p>";
         //save the result for Browserscope
         _bTestResults['Loaded (small screen)'] = 1;
         
     } else {
-        target.innerHTML += "<p class='noload'>http://timkadlec.com/mq/test4-mobile.png?" + suffix + " has not loaded.</p>";
+        target.innerHTML += "<p class='noload'>http://timkadlec.com/mq/images/test4-mobile.png?" + suffix + " has not loaded.</p>";
         //save the result for Browserscope
         _bTestResults['Loaded (small screen)'] = 0;
         

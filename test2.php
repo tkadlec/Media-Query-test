@@ -39,7 +39,7 @@ $id = uniqid(rand(),true);
 	
 	<!-- Test 2 Styles -->
 	<style type="text/css">
-	#test2 {background-image:url('test2.png?<?php echo $id; ?>');width:200px;height:75px;}
+	#test2 {background-image:url('images/test2.png?<?php echo $id; ?>');width:200px;height:75px;}
 	@media all and (max-width: 600px) {
 	    #test2 {display:none;}
 	}
@@ -68,7 +68,7 @@ $id = uniqid(rand(),true);
 
 <h4>CSS Code</h4>
 <code>&#60;style type="text/css"&#62;
-#test2 {background-image:url('test2.png?<?php echo $id; ?>');width:200px;height:75px;}
+#test2 {background-image:url('images/test2.png?<?php echo $id; ?>');width:200px;height:75px;}
 @media all and (max-width: 600px) {
     #test2 {display:none;}
 }
@@ -99,15 +99,15 @@ window.onload = function() {
 	
     //now, create a new image and set it's src
     var image = new Image();
-    image.src = 'http://timkadlec.com/mq/test2.png?' + suffix;
+    image.src = 'http://timkadlec.com/mq/images/test2.png?' + suffix;
     
     if (image.complete) {
-        target.innerHTML += "<p class='load'>http://timkadlec.com/mq/test2.png?" + suffix + " has loaded.</p>";
+        target.innerHTML += "<p class='load'>http://timkadlec.com/mq/images/test2.png?" + suffix + " has loaded.</p>";
         //save the result for Browserscope
         _bTestResults['Loaded'] = 1;
         
     } else {
-        target.innerHTML += "<p class='noload'>http://timkadlec.com/mq/test2.png?" + suffix + " has not loaded.</p>";
+        target.innerHTML += "<p class='noload'>http://timkadlec.com/mq/images/test2.png?" + suffix + " has not loaded.</p>";
         //save the result for Browserscope
         _bTestResults['Loaded'] = 0;
         

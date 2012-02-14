@@ -61,12 +61,12 @@ $id = uniqid(rand(),true);
 </p>
 
 <div id="test1">
-    <img src="test1.png?<?php echo $id; ?>"/>
+    <img src="images/test1.png?<?php echo $id; ?>"/>
 </div>
 
 <h4>HTML Code</h4>
 <code>&#60;div id="test1"&#62;
-    &#60;img src="http://2.cuzillion.com/bin/resource.cgi?type=gif&sleep=4&n=1&t=<?php echo $id; ?>>" /&#62;
+    &#60;img src="images/test1.png?<?php echo $id; ?>>" /&#62;
 &#60;/div&#62;
 </code>
 
@@ -111,15 +111,15 @@ window.onload = function() {
 	
     //now, create a new image and set it's src
     var image = new Image();
-    image.src = 'http://timkadlec.com/mq/test1.png?' + suffix;
+    image.src = 'http://timkadlec.com/mq/images/test1.png?' + suffix;
     
     if (image.complete) {
-        target.innerHTML += "<p class='load'>http://timkadlec.com/mq/test1.png?" + suffix + " has loaded.</p>";
+        target.innerHTML += "<p class='load'>http://timkadlec.com/mq/images/test1.png?" + suffix + " has loaded.</p>";
         //save the result for Browserscope
         _bTestResults['Loaded'] = 1;
         
     } else {
-        target.innerHTML += "<p class='noload'>http://timkadlec.com/mq/test1.png?" + suffix + " has not loaded.</p>";
+        target.innerHTML += "<p class='noload'>http://timkadlec.com/mq/images/test1.png?" + suffix + " has not loaded.</p>";
         //save the result for Browserscope
         _bTestResults['Loaded'] = 0;
         
