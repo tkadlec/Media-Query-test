@@ -44,7 +44,9 @@ $id = uniqid(rand(),true);
     Please click through each test listed below. The results will be collected by Browserscope.
 </p>
 <h2>About these tests</h2>
-<p>These tests are an attempt to determine how images are downloaded by browsers when used in combination with media queries. If you have a suggestion for another test to include in the suite, or find a bug, please send an email to <a href="mailto:tim@timkadlec.com">tim@timkadlec.com</a> or submit a pull request on <a href="https://github.com/tkadlec/Media-Query-test">Github</a>.</p>
+<p>These tests are an attempt to determine how images are downloaded by browsers when used in combination with media queries. The initial tests are lovingly adapted from the tests run by the Cloud Four gang (<a href="http://www.cloudfour.com/css-media-query-for-mobile-is-fools-gold/">check-out Jason Grigsby's article on media queries</a>). The goal is to automate the process so that more devices and browsers can be tested.</p>
+<p>The test uses the image.complete property to determine if an image has been downloaded. The result of this test, along with the value of the screen.width and window.outerWidth properties, are passed back to Browserscope.</p>
+<p>If you have a suggestion for another test to include in the suite, or find a bug, please send an email to <a href="mailto:tim@timkadlec.com">tim@timkadlec.com</a> or submit a pull request on <a href="https://github.com/tkadlec/Media-Query-test">Github</a>.</p>
 
 <?php include('includes/testLinks.inc.php'); ?>
 </body>
