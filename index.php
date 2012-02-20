@@ -14,6 +14,10 @@ $id = uniqid(rand(),true);
 	body {
 		font: 100%/1.4em Georgia, serif;
 	}
+	h1 {
+		line-height: 1.2em;
+	}
+	
 	code {white-space:pre;background:#e1e1e1;border:1px solid #ccc;padding:10px;width:100%;display:block;margin-top:5px;}
 	h4 {margin-bottom:0;}
 	#loaded{
