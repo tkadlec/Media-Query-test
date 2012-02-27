@@ -106,7 +106,7 @@ window.onload = function() {
     var image = new Image();
     image.src = 'http://timkadlec.com/mq/images/test2.png?' + suffix;
     
-    if (image.complete) {
+    if (image.complete || image.height > 0) {
         target.innerHTML += "<p class='load'>http://timkadlec.com/mq/images/test2.png?" + suffix + " has loaded.</p>";
         //save the result for Browserscope
         _bTestResults['Loaded'] = 1;

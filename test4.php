@@ -108,7 +108,7 @@ window.onload = function() {
     var image = new Image();
     image.src = 'http://timkadlec.com/mq/images/test4-desktop.png?' + suffix;
     
-    if (image.complete) {
+    if (image.complete || image.height > 0) {
         target.innerHTML += "<p class='load'>http://timkadlec.com/mq/images/test4-desktop.png?" + suffix + " has loaded.</p>";
         //save the result for Browserscope
         _bTestResults['Loaded (large screen)'] = 1;
@@ -123,7 +123,7 @@ window.onload = function() {
     var imageM = new Image();
     imageM.src = 'http://timkadlec.com/mq/images/test4-mobile.png?' + suffix;
     
-    if (imageM.complete) {
+    if (imageM.complete || imageM.height > 0) {
         target.innerHTML += "<p class='load'>http://timkadlec.com/mq/images/test4-mobile.png?" + suffix + " has loaded.</p>";
         //save the result for Browserscope
         _bTestResults['Loaded (small screen)'] = 1;
