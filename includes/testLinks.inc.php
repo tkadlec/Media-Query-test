@@ -18,4 +18,8 @@
     <li>
         <a href="test6.php">Test Six: Background Image Display None (max-device-width)</a>
     </li>
+    <li>
+        <a href="test7.php">Test Seven: Cascade Override for High Resolution</a>
+    </li>
+	
 </ul>
