@@ -62,8 +62,6 @@ $id = uniqid(rand(),true);
 <body>
 <h1>Media Query Image Download Test</h1>
 
-<p>Lovingly pulled from Cloud Four. <a href="http://www.cloudfour.com/css-media-query-for-mobile-is-fools-gold/">Cloud Four article on media queries</a></p>
-
 <h2 id="t5">Test Seven: Cascade Override for High Resolution</h2>
 <p>
     In this test, we start with a background image that is low res. Then we use a CSS media query to replace that background image if the it is a high resolution display.
