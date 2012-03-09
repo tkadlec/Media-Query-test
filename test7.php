@@ -95,7 +95,11 @@ only screen and (min-device-pixel-ratio: 1.5) {
 //use for browserscope
 var _bTestResults = {};
 //add the widths
-_bTestResults['Pixel Ratio'] = window.devicePixelRatio;
+if (window.devicePixelRatio === undefined) {
+	_bTestResults['Pixel Ratio'] = 0;
+} else {
+	_bTestResults['Pixel Ratio'] = window.devicePixelRatio;
+}
 
 window.onload = function() {
 
@@ -140,7 +144,7 @@ window.onload = function() {
         _bTestResults['Loaded (high res)'] = 0;
         
     }
-
+	target.innerHTML += "<p><strong>window.devicePixelRatio:</strong> " + _bTestResults['Pixel Ratio'] + "</p>";
 	// Fetch the Browserscope script that sucks the results from _bTestResults
 	 (function() {
 		var _bTestKey = 'agt1YS1wcm9maWxlcnINCxIEVGVzdBjj-d0ODA';
