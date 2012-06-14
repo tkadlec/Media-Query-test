@@ -10,36 +10,8 @@ $id = uniqid(rand(),true);
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
 
 
-	<!-- Basic formatting stuff -->
-    <style type="text/css">
-	body {
-		font: 100%/1.4em Georgia, serif;
-	}
-	h1 {
-		line-height: 1.2em;
-	}
-	
-	code {white-space:pre;background:#e1e1e1;border:1px solid #ccc;padding:10px;width:100%;display:block;margin-top:5px;}
-	h4 {margin-bottom:0;}
-	#loaded{
-		border: 1px solid #000;
-		padding: 20px;
-		word-wrap:break-word;
-	}
-	
-	.load{
-		color: green;
-	}
-	.noload{
-		color: red;
-	}
-	.testLinks{
-		font-size: 1.2em;
-	}
-	.testLinks li{
-		margin-bottom: .5em;
-	}
-	</style>
+	<link rel="stylesheet" href="_css/style.css" />
+
 
 	
 	<!-- Test 2 Styles -->
@@ -85,39 +57,28 @@ $id = uniqid(rand(),true);
 	<h2>Results</h2>
 </div>
 <?php include('includes/testLinks.inc.php'); ?>
-
-<script type="text/javascript" charset="utf-8">//use for browserscope
+<script type="text/javascript" src="_js/imageTest.js"></script>
+<script type="text/javascript" charset="utf-8">
 var _bTestResults = {};
-//add the widths
-_bTestResults['Screen Width'] = screen.width;
-_bTestResults['Outer Width'] = window.outerWidth;
-
 window.onload = function() {
+
+	//set the domain prefix so we can just pass image names
+	prefix = 'images/';
 
 	//set our suffix
     //needed because setting image.src fires request
     //this helps us avoid caching messing with the results
-	var suffix = '<?php echo $id; ?>';
+	suffix = '<?php echo $id; ?>';
 	
 	//get the div where we'll spit out the results
-	var target = document.getElementById('loaded');
+	target = document.getElementById('loaded');
+
+	var images = [
+		['test2.png', 'Loaded']
+	];
 	
-    //now, create a new image and set it's src
-    var image = new Image();
-    image.src = 'http://timkadlec.com/mq/images/test2.png?' + suffix;
-    
-    if (image.complete || image.height > 0) {
-        target.innerHTML += "<p class='load'>http://timkadlec.com/mq/images/test2.png?" + suffix + " has loaded.</p>";
-        //save the result for Browserscope
-        _bTestResults['Loaded'] = 1;
-        
-    } else {
-        target.innerHTML += "<p class='noload'>http://timkadlec.com/mq/images/test2.png?" + suffix + " has not loaded.</p>";
-        //save the result for Browserscope
-        _bTestResults['Loaded'] = 0;
-        
-    }
-		
+	_bTestResults = imageTest(images);
+
 	// Fetch the Browserscope script that sucks the results from _bTestResults
 	(function() {
 		var _bTestKey = 'agt1YS1wcm9maWxlcnINCxIEVGVzdBi1v-INDA';
@@ -129,8 +90,6 @@ window.onload = function() {
 		var lastScript = scripts[scripts.length - 1];
 		lastScript.parentNode.insertBefore(_bScript, lastScript);
 	})();
-	
-	
 }
 </script>
 </body>
