@@ -24,5 +24,7 @@
     <li>
         <a href="test8.php">Test Eight: Background Image with Cascade Override and Media Query Overlap</a>
     </li>
-	
+	    <li>
+        <a href="test9.php">Test Nine: Cascade Override for High Resolution (min-resolution)</a>
+    </li>
 </ul>
