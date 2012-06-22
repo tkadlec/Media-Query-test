@@ -88,16 +88,16 @@ window.onload = function() {
 	target.innerHTML += "<p><strong>window.devicePixelRatio:</strong> " + _bTestResults['Pixel Ratio'] + "</p>";
 	
 	// Fetch the Browserscope script that sucks the results from _bTestResults
-	// (function() {
-	// 	var _bTestKey = 'agt1YS1wcm9maWxlcnINCxIEVGVzdBjj-d0ODA';
-	// 	var _bScript = document.createElement('script');
-	// 	_bScript.src = 'http://www.browserscope.org/user/beacon/' + _bTestKey;
-	// 	_bScript.src += '?sandboxid=44f7adc1dd3013d';
-	// 	_bScript.setAttribute('async', 'true');
-	// 	var scripts = document.getElementsByTagName('script');
-	// 	var lastScript = scripts[scripts.length - 1];
-	// 	lastScript.parentNode.insertBefore(_bScript, lastScript);
-	// })(); 
+	(function() {
+		var _bTestKey = 'agt1YS1wcm9maWxlcnINCxIEVGVzdBjCxKERDA';
+		var _bScript = document.createElement('script');
+		_bScript.src = 'http://www.browserscope.org/user/beacon/' + _bTestKey;
+		_bScript.src += '?sandboxid=f643d6b88e1cd09';
+		_bScript.setAttribute('async', 'true');
+		var scripts = document.getElementsByTagName('script');
+		var lastScript = scripts[scripts.length - 1];
+		lastScript.parentNode.insertBefore(_bScript, lastScript);
+	})(); 
 }
 
 </script>
