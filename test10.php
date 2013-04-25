@@ -79,10 +79,10 @@ window.onload = function() {
 
 	// Fetch the Browserscope script that sucks the results from _bTestResults
 	(function() {
-		var _bTestKey = 'agt1YS1wcm9maWxlcnINCxIEVGVzdBjEv-INDA';
+		var _bTestKey = 'agt1YS1wcm9maWxlcnINCxIEVGVzdBj8wL4UDA';
 		var _bScript = document.createElement('script');
 		_bScript.src = 'http://www.browserscope.org/user/beacon/' + _bTestKey;
-		_bScript.src += '?sandboxid=5a813c709f8ee42';
+		_bScript.src += '?sandboxid=d49a247e1ed6525';
 		_bScript.setAttribute('async', 'true');
 		var scripts = document.getElementsByTagName('script');
 		var lastScript = scripts[scripts.length - 1];
